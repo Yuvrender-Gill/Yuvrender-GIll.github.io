@@ -9,17 +9,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <!-- Bootstrap core CSS -->
   <link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   <!-- Custom fonts for this template -->
   <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch"></script>
 
+  <link href="vis-network.min.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="SN/vis.js"></script>
+  <script type="text/javascript" src="SN/draw.js"></script>
   <!-- Custom styles for this template -->
   <link href="../../../css/grayscale.min.css" rel="stylesheet">
     <title>What and Why of Social Networks?</title>
   </head>
-  <body id="page-top">
+  <body id="page-top" onload="draw()">
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black;" id="mainNav">
                 <div class="container">
@@ -29,7 +33,7 @@
 
          <!-- Projects Section -->
         
-         <section id="article" class="projects-section bg-light">
+         <section id="article" class="projects-section bg-light" >
           <div id="content">
               <div class="container">
                   <div class="row">
@@ -52,21 +56,42 @@
                             sociograms. The growth in online community has given us new opportnunites of understanding societies in a way never seen before. Thus it's quite
                             natural that the field of social network analysis is getting the hype lately amongst computer and social scientists.  
                           </p>
-                          <p>
-                            Let us look at some of the graph-theoritic techniques applied to the gloabal social netowrks and their effectiveness for undertanding mass behaviours.
-
-                          </p>
-                      </div>
-                      <div class="col-md-8">
-                          <h3>Body</h3>
+                          <h4>Social Networks as Graphs</h4>
                           <hr class="d-none d-lg-block mb-0 mr-0">
                           <br>
-                      </div>
-                      <div class="col-md-8">
+                          <p>
+                            Let us look at some of the graph-theoritic techniques applied to the gloabal social netowrks and their effectiveness for undertanding mass behaviours.
+                            To begin with let us see how graph theory comes naturally analygous to social netowrks. Say we have a graph <strong> G = (V,E)</strong> then the vertices
+                            in the graph are used to represent people and the edges show the relation among the subjects <a href="#Borodin2019">[1]</a>. Since graphs are used to 
+                            represents the networks, it is natural to tweek the properties of graphs such as connectedness and structure to explore the social relations.  
+                          </p>
+                          <style type="text/css">
+                            #mynetwork1 {
+                                width: 900px;
+                                height: 500px;
+                            }
+                          </style>
+                          <div id="mynetwork1"></div>
+                          <br>
+                          <p>
+                            The above graph of a hypothetical social network shows several properties of a social network. One of the key observation in the above graph
+                            is the <strong>connected </strong> nodes (users on social media platform) and <strong> isolated </strong> nodes. The connectedness of the graph gives rise to concept of <strong> 
+                              componenets </strong> <a href="#Borodin2019">[1]</a> and several applications include analyzing the size and growth of these components. On a social media 
+                              platform the general observation is that the users with a 
+                            bigger network are less likely to leave the platfrom compared to the ones that are isolates. So studying the dynamics of components is important for 
+                            enhancing user growth on platforms. 
+                          </p>
+
+                          <p>
+                              Key graph theoritic concepts such as directed vs undirected grahps, cyclic vs acyclic graphs, bipartite graphs and weighted graphs occur naturally in social networks. 
+
+                            </p>
+
                           <h3>Conclusion</h3>
                           <hr class="d-none d-lg-block mb-0 mr-0">
                           <br>
                       </div>
+                      
                     </div>
               </div>
               <hr class="d-none d-lg-block mb-0 mr-0">
@@ -78,20 +103,20 @@
                         <h4>References</h4>                  
                         <br>
                         <ol id="references-list" class="references">
-                          <li id="Rasmussen2004">
+                          <li id="Borodin2019">
                             <span class="title" style="font-weight:bold">Social and Information Networks</span>
                             <a href="http://www.cs.toronto.edu/~bor/303s19/docs/W1.pdf">[PDF]</a>
                             <br>
                             Borodin A., 2019. Social and Information Networks, pp. 7--76. University of Toronto.
                           </li>
                           <br>
-                          <li id="Rasmussen2004">
+                          <li id="Easley2010">
                               <span class="title" style="font-weight:bold">Chapter 1: Overview</span>
                               <br>
                               Easley D., Kleinberg J., 2010. Networks, Crowds, and Markets: Reasoning about a Highly Connected World, pp. 1--8. Cambridge University Press, 2010. 
                           </li>
                           <br>
-                          <li id="Rasmussen2004">
+                          <li id="Backstorm2013">
                               <span class="title" style="font-weight:bold">Romantic Partnerships and the Dispersion of Social Ties</span>
                               <br>
                               Backstorm L., Kleinberg J., 2013. Romantic Partnerships and the Dispersion of Social Ties:

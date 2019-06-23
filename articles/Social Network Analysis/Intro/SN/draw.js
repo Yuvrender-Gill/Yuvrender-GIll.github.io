@@ -3,7 +3,7 @@ function draw() {
     var nodes = [
         {id: 0, "label": "Tom", "group": 1},
         {id: 1, "label": "Napoleon", "group": 1},
-        {id: 2, "label": "COlbert", "group": 1},
+        {id: 2, "label": "Colbert", "group": 1},
         {id: 3, "label": "Kim", "group": 1},
         {id: 4, "label": "Hassris", "group": 1},
         {id: 5, "label": "Geborand", "group": 3},

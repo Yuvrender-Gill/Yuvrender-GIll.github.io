@@ -1,12 +1,21 @@
 
 import React from 'react';
-import ResponsiveAppBar from '../components/Navbar'
+
+import { Grid } from '@mui/material';
+import AuthorIntro from '../components/AuthorIntro';
+
+import ResponsiveAppBar from '../components/Navbar';
+
 function Home() {
   return (
-    <div>
+    <Grid>
+      <Grid item xs={12}>
         <ResponsiveAppBar/>
-      <h1>Yuvrender Gill</h1>
-    </div>
+      </Grid>
+      <Grid item xs={12}>
+        <AuthorIntro></AuthorIntro>
+      </Grid>
+    </Grid>
   );
 }
 

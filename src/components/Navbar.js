@@ -16,9 +16,15 @@ import { navbarItemsConfig } from '../configs/NavbarConfigs';
 const theme = {
   box:{
     sx: { 
-      flexGrow: 1, 
+      // flexGrow: 1, 
       display: { xs: 'none', md: 'flex' },
       cursor:'pointer',
+      float: 'right',
+    }
+  },
+  authorName:{
+    sx:{
+      
     }
   }
 }
@@ -40,19 +46,19 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters spacing={3} >
-        
         <Typography
           variant="h3"
           noWrap
           component="div"
           onClick={() => navigate(navbarItemsConfig[0].navItemLink)}
+          sx={{ flexGrow: 1 }}
         >
           {
             navbarItemsConfig[0].navItem // LOGO
           }
         </Typography>
-
-        <Stack direction="row"  sx={theme.box.sx} px={10} spacing={3}>
+        
+        <Stack direction="row"  sx={theme.box.sx} px={5} spacing={3}>
           {navbarItemsConfig.slice(1).map((page) => (
             
               <Typography

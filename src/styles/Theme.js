@@ -30,7 +30,8 @@ export const lightTheme = createTheme({
  */
 export const authorIntroTheme = {
     authorImage: {
-        width:"200", 
-        height:"400",
+        width:'100%', 
+        height:'auto',
+     
     }
 }
